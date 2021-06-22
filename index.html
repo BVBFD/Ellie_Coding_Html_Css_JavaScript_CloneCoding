@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,6 +15,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="main.js" defer></script>
 </head>
+
 <body>
     <!-- Navbar -->
     <nav id="navbar">
@@ -41,11 +43,11 @@
     <!-- About -->
     <section id="about">
         <!-- 똑같이 반복되어서 나오는 것이기 때문에 클래스를 정의하지 않는다. -->
-        <h1>About me</h1>   
+        <h1>About me</h1>
         <p>I have have been studying and working in the front-end field for 2 years. <br>
             And, I developed the apps educating Korean for foreigners with Korean, Vietnamese and English. <br>
             I have started to learn back-end field as well for becoming full-stack-developer. <br>
-            With the skills above, I think I can help with your project.  
+            With the skills above, I think I can help with your project.
         </p>
         <div class="about__majors">
             <div class="major">
@@ -175,10 +177,53 @@
         </div>
     </section>
     <!-- Work -->
-    <section id="work"></section>
+    <section id="work">
+        <h1>My Work</h1>
+        <h3>Project</h3>
+        <div class="work__categories">
+            <button class="category__btn">
+                All<span class="category__count">8</span>
+            </button>
+            <button class="category__btn">
+                Front-end<span class="category__count">3</span>
+            </button>
+            <button class="category__btn">
+                Back-end<span class="category__count">2</span>
+            </button>
+            <button class="category__btn">
+                Mobile<span class="category__count">3</span>
+            </button>
+        </div>
+
+        <div class="work__projects">
+            <a href="https://bvbfd.github.io/kokoa-clone-2021-practice/" class="project" target="blank"></a>
+            <img class="project__img" src="imgs/projects/kokoatalk/kakotalk_more_iphone.png" alt="Kokoatalk_practice">
+            <div class="project__description">
+                <h3>Kakao Talk</h3>
+                <span>Clone Coding Practice with Html and CSS</span>
+            </div>
+        </div>
+        <div class="work__projects">
+            <a href="" class="project" target="blank"></a>
+            <img class="project__img" src="imgs/projects/project1.png" alt="YouTube">
+            <div class="project__description">
+                <h3>YouTube</h3>
+                <span>YouTube with Html and CSS, JavaScript, Mongo DB, NodeJs</span>
+            </div>
+        </div>
+        <div class="work__projects">
+            <a href="" class="project" target="blank"></a>
+            <img class="project__img" src="imgs/projects/project6.png" alt="Fresh-Orange">
+            <div class="project__description">
+                <h3>Fresh-Orange</h3>
+                <span>Fresh-Orange with Html and CSS, JavaScript</span>
+            </div>
+        </div>
+    </section>
     <!-- Testimonials -->
     <section id="testimonial"></section>
     <!-- Contact -->
     <section id="contact"></section>
 </body>
+
 </html>
