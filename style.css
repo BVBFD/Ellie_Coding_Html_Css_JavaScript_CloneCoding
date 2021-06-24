@@ -303,6 +303,12 @@ p {
 /* Work */
 .work__categories {
   margin: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  /* 내가 수정한거임. */
 }
 
 .category__btn {
