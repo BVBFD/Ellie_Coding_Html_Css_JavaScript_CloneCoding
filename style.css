@@ -288,3 +288,106 @@ p {
 .ets {
   padding: 20px;
 }
+
+/* Work */
+.work__categories {
+  margin: 40px;
+}
+
+.category__btn {
+  border: 1px solid var(--color-dark-white);
+  border-radius: var(--size-border-radius);
+  font-size: var(--font-regular);
+  padding: 8px 48px;
+}
+
+.category__btn:active,
+.category__btn:hover {
+  background-color: var(--color-orange);
+  color: var(--color-white);
+}
+
+.category__btn:active .category__count,
+.category__btn:hover .category__count {
+  opacity: 1;
+  top: 0;
+}
+
+.category__count {
+  background-color: var(--color-dark-orange);
+  border-radius: 50%;
+  color: var(--color-white);
+  width: 24px;
+  height: 24px;
+  /* 원이 예쁘지 않은 것은 span 태그 자체가 꽉 감싸주는 사이즈로 정해주기 때문에 */
+  line-height: 24px;
+  display: inline-block;
+  /* inline 속성상 span 태그 자체가 꽉 감싸주기 때문에 inline-block으로 설정해주면 많이 예뻐진다. */
+  position: relative;
+  top: -20px;
+  left: 3px;
+  opacity: 0;
+  transition: all var(--animation-duration) ease-in;
+}
+
+.work__projects {
+  display: flex;
+  flex-wrap: wrap;
+  /* 크기 조절에 따른 한 줄에 아이템이 꽉차면 자동적으로 줄바꿈을 할 수 있도록 만들어 보자 (wrapping) 영어 뜻 그대로 */
+  justify-content: center;
+}
+
+.project {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 280px;
+  height: 250px;
+  margin: 2px;
+  background-color: var(--color-light-white);
+}
+
+.project__img {
+  max-width: 100%;
+  max-height: 100%;
+  /* 자신이 담겨져있는 통 안에서만 최대치로 커져야 하기 때문에 이렇게 설정 */
+}
+
+.project__description {
+  position: absolute;
+  /* 원래 들어있던 박스에서 벗어나서 위치를 바꾸는 것은 포지션 앱솔루트 입니다. */
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transform: translateY(10px);
+  /* 원래는 opacity 0, 10px 정도 내려 놓는다. */
+  transition: all var(--animation-duration) ease-in;
+}
+
+.project:hover .project__description {
+  opacity: 0.8;
+  transform: translateY(0);
+}
+
+.project__description h3 {
+  color: var(--color-white);
+}
+
+.project__description h3:after {
+  content: "";
+  display: block;
+  position: relative;
+  left: 50%;
+  width: 25px;
+  height: 2px;
+  margin-left: -12px;
+  background-color: var(--color-dark-white);
+  margin-top: 8px;
+}
