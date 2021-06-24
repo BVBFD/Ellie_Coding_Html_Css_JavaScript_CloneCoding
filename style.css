@@ -164,6 +164,7 @@ p {
 
 .section__container {
   max-width: 1200px;
+  /* 화면을 늘림에 따라 박스 사이즈 변화되는 것 방지 */
   margin: auto;
 }
 
