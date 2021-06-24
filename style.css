@@ -126,6 +126,16 @@ p {
   background-color: var(--color-dark-orange);
 }
 
+.navbar__toggle-btn {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  font-size: 24px;
+  color: var(--color-white);
+  display: none;
+  /* opacity로 적용하면 마우스 올라가면 클릭 되어짐 *주의* */
+}
+
 /* Home */
 #home {
   background: url("imgs/배경화면.png") center/cover no-repeat;
@@ -299,7 +309,8 @@ p {
   border: 1px solid var(--color-dark-white);
   border-radius: var(--size-border-radius);
   font-size: var(--font-regular);
-  padding: 8px 48px;
+  padding: 8px;
+  width: 300px;
 }
 
 .category__btn:active,
@@ -463,4 +474,46 @@ p {
 .contact__links i:hover {
   transform: scale(1.2);
   color: var(--color-black);
+}
+
+/* For below 768px screen width */
+@media screen and (max-width: 768px) {
+  /* 반응형 만들때 미디어 쿼리에 들어가야 할 것은 최소한 즉, 차이점만 들어가야함 */
+  .navbar__toggle-btn {
+    display: block;
+  }
+
+  #navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar__menu {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    display: none;
+  }
+
+  .about__majors {
+    flex-direction: column;
+  }
+
+  .major {
+    margin-bottom: 38px;
+  }
+
+  .skillset {
+    flex-direction: column;
+  }
+
+  .project {
+    flex-grow: 1;
+    /* 화면 크기가 작아졌을때 자동적으로 매꿔주는 것 */
+  }
+
+  .testimonial__avatar {
+    width: 80px;
+    height: 80px;
+  }
 }
