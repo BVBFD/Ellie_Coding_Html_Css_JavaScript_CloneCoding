@@ -408,6 +408,7 @@ p {
   margin-left: -12px;
   background-color: var(--color-dark-white);
   margin-top: 8px;
+  /* h3 다음에(after or before) 콘텐트 박스를 넣어주는 것임. */
 }
 
 /* Testimonial */
