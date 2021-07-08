@@ -493,6 +493,32 @@ p {
   color: var(--color-black);
 }
 
+/* Scroll */
+.arrow-up {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+  color: var(--color-white);
+  background-color: var(--color-dark-orange);
+  border-radius: 50%;
+  /* display: none; */
+  /* display 같은 경우 완전히 없어졌다가 나타나는 것이기 때문에 */
+  /* 애니메이션이 되지 않음 */
+  opacity: 0;
+  pointer-events: none;
+  /* 안보일때는 클릭 안되게끔 하기 */
+  transition: opacity var(--animation-duration) ease-in;
+}
+
+.arrow-up.visible {
+  /* display: block; */
+  opacity: 1;
+  pointer-events: auto;
+}
+
 /* For below 768px screen width */
 @media screen and (max-width: 768px) {
   /* 반응형 만들때 미디어 쿼리에 들어가야 할 것은 최소한 즉, 차이점만 들어가야함 */
