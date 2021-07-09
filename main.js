@@ -13,6 +13,12 @@ document.addEventListener('scroll', () =>{
     }
 });
 
+// Navbar toggle button for small screen
+const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
+navbarToggleBtn.addEventListener('click', () => {
+    navbarMenu.classList.toggle('open');
+});
+
 // 내가 스크롤을 할때마다 내가 등록한 이 arrow fuction을 호출해줘.
 // https://developer.mozilla.org/ko/docs/Web/API/Window/scrollY
 
@@ -28,6 +34,7 @@ navbarMenu.addEventListener('click', (event) => {
     console.log(event.target.dataset.link);
     // const scrollTo = document.querySelector(link);
     // scrollTo.scrollIntoView({behavior: "smooth"});
+    navbarMenu.classList.remove('open');
     scrollIntoView(link);
 });
 // var elmnt = document.getElementById("content");

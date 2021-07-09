@@ -414,17 +414,18 @@ p {
 }
 
 .project__description h3 {
-  color: var(--color-white);
+  color: var(--color-orange);
 }
 
 .project__description h3:after {
   content: "";
   display: block;
   position: relative;
-  left: 50%;
-  width: 25px;
+  left: 46%;
+  width: 50px;
   height: 2px;
   margin-left: -12px;
+  /* margin-left: translateY(-50%); */
   background-color: var(--color-dark-white);
   margin-top: 8px;
   /* h3 다음에(after or before) 콘텐트 박스를 넣어주는 것임. */
@@ -538,6 +539,11 @@ p {
   #navbar {
     flex-direction: column;
     align-items: flex-start;
+    background-color: var(--color-dark-orange);
+  }
+
+  #navbar.navbar--dark {
+    padding: 16px;
   }
 
   .navbar__menu {
@@ -545,6 +551,10 @@ p {
     text-align: center;
     width: 100%;
     display: none;
+  }
+
+  .navbar__menu.open {
+    display: block;
   }
 
   .about__majors {
