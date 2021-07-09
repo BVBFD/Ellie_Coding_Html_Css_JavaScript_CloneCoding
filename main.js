@@ -58,9 +58,47 @@ document.addEventListener('scroll', () => {
     }
 });
 
+// Handle click on the "arrow up" button
 arrowUp.addEventListener('click', () => {
     scrollIntoView('#home');
 });
+
+// Projects
+const workBtnContainer = document.querySelector('.work__categories');
+const ProjectContainer = document.querySelector('.work__projects');
+const projects = document.querySelectorAll('.project');
+workBtnContainer.addEventListener('click', (e) => {
+    const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
+    if(filter == null){
+        return;
+    }
+    ProjectContainer.classList.add('anim-out');
+    setTimeout(() => {
+            projects.forEach((project) => {
+                console.log(project.dataset.type);
+                if(filter === '*' || filter === project.dataset.type){
+                    project.classList.remove('invisible');
+                } else {
+                    project.classList.add('invisible');
+                }
+            });
+            ProjectContainer.classList.remove('anim-out');
+        }, 300);
+});
+
+    // console.log(`-------------`);
+    // for(let project of projects) {
+    //     console.log(project);
+    // }
+
+    // console.log(`-------------`);
+    // let project;
+    // for(let i = 0 ; i < projects.length ; i++){
+    //     project = projects[i];
+    //     console.log(project);
+    // }
+    //  forEach() 함수랑 똑같음.
+
 
 function scrollIntoView(selector) {
     const scrollTo = document.querySelector(selector);

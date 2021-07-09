@@ -326,7 +326,7 @@ p {
   border-radius: var(--size-border-radius);
   font-size: var(--font-regular);
   padding: 8px;
-  width: 300px;
+  width: 250px;
 }
 
 .category__btn:active,
@@ -363,6 +363,13 @@ p {
   flex-wrap: wrap;
   /* 크기 조절에 따른 한 줄에 아이템이 꽉차면 자동적으로 줄바꿈을 할 수 있도록 만들어 보자 (wrapping) 영어 뜻 그대로 */
   justify-content: center;
+  opacity: 1;
+  transition: all var(--animation-duration) ease-out;
+}
+
+.work__projects.anim-out {
+  opacity: 0;
+  transform: scale(0.96) translateY(40px);
 }
 
 .project {
@@ -374,6 +381,10 @@ p {
   height: 250px;
   margin: 2px;
   background-color: var(--color-light-white);
+}
+
+.project.invisible {
+  display: none;
 }
 
 .project__img {
