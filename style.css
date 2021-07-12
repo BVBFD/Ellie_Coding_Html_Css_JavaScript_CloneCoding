@@ -173,6 +173,10 @@ p {
   border-radius: var(--size-border-radius);
 }
 
+.home__contact:hover {
+  background-color: var(--color-orange);
+}
+
 /* Section common */
 .section {
   padding: 50px;
@@ -323,8 +327,11 @@ p {
   border: 1px solid var(--color-dark-white);
   border-radius: var(--size-border-radius);
   font-size: var(--font-regular);
-  padding: 8px;
+  margin: 0 4px;
+  padding: 4px 0;
   width: 250px;
+  position: relative;
+  /* relative 추가 텍스트 중앙정렬을 위해서 */
 }
 
 .category__btn.selected,
@@ -336,7 +343,7 @@ p {
 .category__btn.selected .category__count,
 .category__btn:hover .category__count {
   opacity: 1;
-  top: 0;
+  top: 3px;
 }
 
 .category__count {
@@ -349,9 +356,10 @@ p {
   line-height: 24px;
   display: inline-block;
   /* inline 속성상 span 태그 자체가 꽉 감싸주기 때문에 inline-block으로 설정해주면 많이 예뻐진다. */
-  position: relative;
+  position: absolute;
+  /* relative에서 absolute로 변경 텍스트 중앙정렬을 위해서 */
   top: -20px;
-  left: 3px;
+  right: 45px;
   opacity: 0;
   transition: all var(--animation-duration) ease-in;
 }
@@ -532,8 +540,20 @@ p {
 /* For below 768px screen width */
 @media screen and (max-width: 768px) {
   /* 반응형 만들때 미디어 쿼리에 들어가야 할 것은 최소한 즉, 차이점만 들어가야함 */
+  :root {
+    /* Font size */
+    --font-large: 30px;
+    --font-medium: 18px;
+    --font-regular: 16px;
+    --font-small: 14px;
+    --font-micro: 12px;
+  }
+
   .navbar__toggle-btn {
     display: block;
+    top: 16px;
+    right: 16px;
+    font-size: var(--font-medium);
   }
 
   #navbar {
@@ -557,25 +577,69 @@ p {
     display: block;
   }
 
+  .section {
+    padding: 16px;
+    padding-top: 40px;
+  }
+
   .about__majors {
     flex-direction: column;
+    margin-top: 30px;
+    margin-bottom: 0px;
   }
 
   .major {
-    margin-bottom: 38px;
+    margin-bottom: 30px;
   }
 
   .skillset {
     flex-direction: column;
   }
 
+  .category__btn {
+    padding: 8px;
+  }
+
   .project {
     flex-grow: 1;
     /* 화면 크기가 작아졌을때 자동적으로 매꿔주는 것 */
+    /* note!! vw, vh에 대응 작동 안함. */
+  }
+
+  .testimonial {
+    flex-direction: column;
+    align-items: center;
   }
 
   .testimonial__avatar {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
+    /* margin-bottom: 20px; */
+    /* 여기서 마진이 적용이 안되는 이유는 .testimonial__avatar:nth-child(odd) */
+    /* .testimonial__avatar:nth-child(even)이 더 세부적인 설정이기 때문에 */
+    /* 더 세부적인 설정을 이기지 못한다 */
+    /* 그래서 그 세부적인 설정에서 margin을 적용시켜야 한다 */
+  }
+
+  .testimonial__avatar:nth-child(odd),
+  .testimonial__avatar:nth-child(even) {
+    margin: 0;
+    margin-bottom: 8px;
+  }
+
+  .testimonial__speech-bubble {
+    order: 1;
+  }
+
+  .arrow-up {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    line-height: 50px;
+    right: 16px;
+    bottom: 16px;
   }
 }
+
+/* etc */
+/* overflow-x */
